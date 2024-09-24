@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="rocketship"></div>
+
+  <!-- Links to Projects -->
+  <div class="planet" id="planet1" onclick="window.open('https://github.com/0-gen/Projects/tree/main/Hardware%20Sensor%20IOS%20Application')"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
