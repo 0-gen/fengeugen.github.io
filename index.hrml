@@ -11,7 +11,7 @@
   <div id="rocketship" style="font-size: 48px;">🚀</div>
   <h2>Explore My Projects:</h2>
   <ul>
-      <li><a href="https://github.com/0-gen/Projects/Hardware Sensor IOS Application" target="_blank">Project 1</a></li>
+      <li><a href="https://github.com/0-gen/Projects/tree/main/Hardware Sensor IOS Application" target="_blank">Project 1</a></li>
   </ul>
   <script src="script.js"></script>
 </body>
