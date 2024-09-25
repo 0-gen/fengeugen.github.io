@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Projects</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div id="rocketship" style="font-size: 48px;">🚀</div>
 
-  <ul>
-      <li>
-        <a href="https://github.com/0-gen/Projects/tree/main/Hardware Sensor IOS Application" target="_blank">
-          <img src="Assets/images/planet1.png" alt="Planet 1" style="width: 100px; height: auto;">
-        </a>
-      </li>
-  </ul>
-  <script src="script.js"></script>
-</body>
+<body>
+  <!-- Intro section
+  ================================================== -->
+  
+  <section id="intro">
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
+        <div class="row">
+            <div class="col-twelve">
+                <h5>Hello, World.</h5>
+                <h1>I am Eugen Feng.</h1>
+                <button class="button stroke" onclick="slideToAbout()"> Learn More </button>
+            </div>
+        </div>
+    </div>
+  </section> <!-- /intro -->
+
+  <section id="about" style="display: none;">
+    <div class="about-overlay"></div>
+    <div class="about-content">  
+      <button class="button stroke" href="#" onclick="slideToIntro()"> Back </button>
+      <ul>
+          
+          <li>
+            <a href="https://github.com/0-gen/Projects/tree/main/Hardware Sensor IOS Application" target="_blank">
+              <img src="Assets/images/planet1.png" alt="Planet 1" style="width: 100px; height: auto;">
+            </a>
+          </li>
+          <!-- Add more project entries here -->
+      </ul>
+    </div>
+    </section>
+    <canvas id="warpCanvas" style="position: absolute; top: 0; left: 0; pointer-events: none;"></canvas>
+    <script src="helper.js"></script>
+  </body>
 </html>

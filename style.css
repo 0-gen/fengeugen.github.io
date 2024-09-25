@@ -1,36 +1,165 @@
+/* New CSS styles */
 body {
-    background: url('/Assets/images/space-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    cursor: none;
+  background: url('/Assets/images/space-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  /*cursor: none;*/
+}
+
+ /*#rocketship {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('/Assets/images/rocketship.png');
+  pointer-events: none;
+}
+*/
+.planet {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.planet:hover {
+  transform: scale(1.2);
+}
+
+#planet1 {
+  background-image: url('/Assets/images/planet1.png');
+  top: 30%;
+  left: 20%;
+}
+
+/* Intro Section Styles */
+#intro {
+  position: relative; /* Allows for positioning of overlay */
+  height: 100vh; /* Full height of the viewport */
+  background: url('/Assets/images/intro-background.jpg') no-repeat center center; /* Background image */
+  background-size: cover; /* Cover the entire section */
+  display: flex; /* Center content vertically and horizontally */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+}
+
+.intro-overlay {
+  position: absolute; /* Overlay over the background */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
+
+.intro-content {
+  position: relative; /* Keep content above the overlay */
+  z-index: 1; /* Ensure content is above the overlay */
+  color: #fff; /* White text for visibility */
+  padding: 20px; /* Padding around the content */
+}
+
+.row {
+  max-width: 1200px; /* Limit the width of the row */
+  margin: 0 auto; /* Center the row */
+  width: 100%; /* Full width */
+}
+
+.col-twelve {
+  width: 100%; /* Full width of the column */
+}
+
+h5 {
+  font-size: 24px; /* Size for the subheading */
+  margin-bottom: 10px; /* Space below the subheading */
+}
+
+h1 {
+  font-size: 48px; /* Size for the main heading */
+  margin-bottom: 20px; /* Space below the main heading */
+}
+
+.button {
+  display: inline-block; /* Button as inline block */
+  padding: 10px 20px; /* Padding for the button */
+  border: 2px solid #fff; /* White border */
+  color: #fff; /* White text */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+}
+
+.button.stroke {
+  background: transparent; /* Transparent background */
+}
+
+.button.stroke:hover {
+  background: #fff; /* White background on hover */
+  color: #000; /* Black text on hover */
+}
+/* Slide-in from the right (for about section when clicked "Learn More") */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  #rocketship {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-image: url('/Assets/images/rocketship.png');
-    pointer-events: none;
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .planet {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+}
+
+/* Slide-out to the left (for intro section when clicked "Learn More") */
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .planet:hover {
-    transform: scale(1.2);
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  #planet1 {
-    background-image: url('/Assets/images/planet1.png');
-    top: 30%;
-    left: 20%;
+}
+
+/* Slide-in from the left (for intro section when clicked "Back") */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-out to the right (for about section when clicked "Back") */
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Applying the animations */
+.slideInRight {
+  animation: slideInRight 1s forwards;
+}
+
+.slideOutLeft {
+  animation: slideOutLeft 1s forwards;
+}
+
+.slideInLeft {
+  animation: slideInLeft 1s forwards;
+}
+
+.slideOutRight {
+  animation: slideOutRight 1s forwards;
+}
