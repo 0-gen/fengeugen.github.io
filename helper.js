@@ -45,3 +45,52 @@ function slideToIntro() {
         }, { once: true });
     }, { once: true }); // Ensure the event only fires once
 }
+
+function showMoons(moonListId, planetElement) {
+  const moonList = document.getElementById(moonListId);
+  
+  // Hide all other moon lists
+  const moonLists = document.querySelectorAll('.moon-list');
+  moonLists.forEach(list => {
+    if (list.id !== moonListId) {
+      list.classList.add('hidden');
+    }
+  });
+
+  // Toggle the visibility of the clicked moon list
+  if (moonList.classList.contains('hidden')) {
+    moonList.classList.remove('hidden');
+  } else {
+    moonList.classList.add('hidden');
+  }
+}
+
+// To close the overlay and moon list on click
+overlay.addEventListener('click', function() {
+  overlay.classList.remove('visible'); // Hide overlay
+  const allMoonLists = document.querySelectorAll('.moon-list');
+  allMoonLists.forEach((list) => {
+    list.classList.add('hidden'); // Hide all moon lists
+  });
+});
+
+// Function to handle clicks on moon list items
+function handleMoonItemClick(event) {
+  event.stopPropagation(); // Prevent event from bubbling up to the overlay
+}
+
+// Add this function to your moon list item click handlers
+const moonItems = document.querySelectorAll('.moon-list li');
+moonItems.forEach(item => {
+  item.addEventListener('click', handleMoonItemClick);
+});
+
+function toggleSubmenu(submenuId) {
+  const submenu = document.getElementById(submenuId);
+  if (submenu.classList.contains('hidden')) {
+    submenu.classList.remove('hidden');
+  } else {
+    submenu.classList.add('hidden');
+  }
+}
+

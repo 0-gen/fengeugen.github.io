@@ -17,7 +17,7 @@
     <div class="intro-content">
         <div class="row">
             <div class="col-twelve">
-                <h5>Hello, World.</h5>
+                <h5>Hello, World!</h5>
                 <h1>I am Eugen Feng.</h1>
                 <button class="button stroke" onclick="slideToAbout()"> Learn More </button>
             </div>
@@ -29,17 +29,182 @@
     <div class="about-overlay"></div>
     <div class="about-content">  
       <button class="button stroke" href="#" onclick="slideToIntro()"> Back </button>
-      <ul>
+      
+      <div id="planet-container">
+        <!-- Planet 1 About Me -->
+        <div class="planet" style="top: 120px; left: 700px;" onclick="showMoons('moon-list1', this)">
+          <img src="Assets/images/planet1.png" alt="Planet 1" style="width: 100px; height: auto;">
+          <div class="planet-names">About Me</div>
+          <div class="moons">
+            <div class="moon" style="background-image: url('Assets/images/moon1.png');"></div>
+            
+            <div class="moon" style="background-image: url('Assets/images/moon2.png');"></div>
           
-          <li>
-            <a href="https://github.com/0-gen/Projects/tree/main/Hardware Sensor IOS Application" target="_blank">
-              <img src="Assets/images/planet1.png" alt="Planet 1" style="width: 100px; height: auto;">
+            <a href="" target="_blank" class="moon" style="background-image: url('Assets/images/moon7.png');">
+              <div class="moon-text">
+              </div>
             </a>
-          </li>
-          <!-- Add more project entries here -->
-      </ul>
+            
+            <!-- Moon Lists -->
+            <div id="moon-list1" class="moon-list hidden">
+              <ul>
+                <li>
+                  <div style="display: flex; align-items: center;">
+                    <a href="https://www.linkedin.com/in/fengeugen/" target="_blank" style="display: flex; align-items: center; color: white; text-decoration: none;">
+                      <img src="Assets/images/moon1.png" alt="Moon 1" style="width: 30px; height: auto; margin-right: 8px;">
+                      LinkedIn
+                    </a>
+                    
+                  </div>
+                </li>
+                <li>
+                  <div style="display: flex; align-items: center;">
+                    <a href="https://github.com/0-gen" target="_blank" style="display: flex; align-items: center; color: white; text-decoration: none;">
+                      <img src="Assets/images/moon2.png" alt="Moon 2" style="width: 30px; height: auto; margin-right: 8px;">
+                      Github
+                    </a>
+
+                  </div>
+                </li>
+                <li>
+                  <div style="display: flex; align-items: center;"  onclick="toggleSubmenu('submenu')">
+                    <img src="Assets/images/moon7.png" alt="Moon 3" style="width: 30px; height: auto; margin-right: 8px;">
+                    Contact Information
+                  </div>
+                  <div id="submenu" class="hidden submenu">
+                    <ul>
+                      <li>
+                        <a style="color: white; text-decoration: none;">fengeugen@gmail.com</a>
+                      </li>
+                      <li>
+                        <a style="color: white; text-decoration: none;">+1(646)-733-7775</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planet 2 Education -->
+        <div class="planet" style="top: 400px; left: 500px;" onclick="showMoons('moon-list2', this)">
+          <img src="Assets/images/planet2.png" alt="Planet 2" style="width: 100px; height: auto;">
+          <div class="planet-names">Education</div>
+          <div class="moons">
+
+            <div class="moon" style="background-image: url('Assets/images/moon1.png');">
+              <a href="https://www.linkedin.com/in/fengeugen/" target="_blank">
+                <div class="moon-name"></div>
+              </a>
+            </div>
+          
+            <div class="moon" style="background-image: url('Assets/images/moon2.png');">
+              <div class="moon-name"></div>
+            </div>
+
+            <!-- Moon Lists -->
+            <div id="moon-list2" class="moon-list hidden">
+              <ul>
+                <li>
+                  <div style="display: flex; align-items: center;">
+                    <img src="Assets/images/moon1.png" alt="Moon 1" style="width: 30px; height: auto; margin-right: 8px;">
+                    University at Buffalo<br>BS Electrical Engineering 
+                  </div>
+                </li>
+                <li>
+                  <div style="display: flex; align-items: center;">
+                    <img src="Assets/images/moon2.png" alt="Moon 2" style="width: 30px; height: auto; margin-right: 8px;">
+                    Northeastern University<br>MS Electrical and Computer Engineering 
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+  
+        <!-- Planet 3 with 2 moons -->
+        <div class="planet" style="top: 600px; left: 1000px;" onclick="showMoons('moon-list3', this)">
+          <img src="Assets/images/planet3.png" alt="Planet 3" style="width: 100px; height: auto;">
+          <div class="planet-names">Work Experience</div>
+          <div class="moons">
+            <div class="moon" style="background-image: url('Assets/images/moon7.png');"></div>
+            <div class="moon" style="background-image: url('Assets/images/moon4.png');"></div>
+          </div>
+          
+            <!-- Moon Lists -->
+            <div id="moon-list3" class="moon-list hidden">
+              <ul>
+                <li>
+                  <div style="display: flex; align-items: center;">
+                    <img src="Assets/images/moon7.png" alt="Moon 7" style="width: 30px; height: auto; margin-right: 8px;">
+                    <div>
+                      BAE Systems <br>
+                      <span style="font-size: smaller; font-style: italic;"> Software Engineer</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div style="display: flex; align-items: center;">
+                    <img src="Assets/images/moon4.png" alt="Moon 4" style="width: 30px; height: auto; margin-right: 8px;">
+                    <div>
+                      General Dynamics Electric Boat <br>
+                      <span style="font-size: smaller; font-style: italic;"> Communications Systems Engineer </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+        </div>
+  
+        <!-- Planet 4 with 6 moons -->
+        <div class="planet" style="top: 200px; left: 1400px;" onclick="showMoons('moon-list4', this)">
+          <img src="Assets/images/planet4.png" alt="Planet 4" style="width: 100px; height: auto;">
+          <div class="planet-names">Projects</div>
+          <div class="moons">
+            <div class="moon" style="background-image: url('Assets/images/moon1.png');"></div>
+            <div class="moon" style="background-image: url('Assets/images/moon2.png');"></div>
+            <div class="moon" style="background-image: url('Assets/images/moon3.png');"></div>
+            <div class="moon" style="background-image: url('Assets/images/moon4.png');"></div>
+            <div class="moon" style="background-image: url('Assets/images/moon5.png');"></div>
+            <div class="moon" style="background-image: url('Assets/images/moon7.png');"></div>
+          </div>
+
+          <!-- Moon Lists -->
+          <div id="moon-list4" class="moon-list hidden">
+            <ul>
+              <li>
+                <div style="display: flex; align-items: center;">
+                  <img src="Assets/images/moon1.png" alt="Moon 1" style="width: 30px; height: auto; margin-right: 8px;">
+                  <div>
+                    BAE Systems <br>
+                    <span style="font-size: smaller; font-style: italic;"> Software Engineer</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div style="display: flex; align-items: center;">
+                  <img src="Assets/images/moon2.png" alt="Moon 2" style="width: 30px; height: auto; margin-right: 8px;">
+                  <div>
+                    General Dynamics Electric Boat <br>
+                    <span style="font-size: smaller; font-style: italic;"> Communications Systems Engineer </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
     </div>
     </section>
+    <div class="overlay hidden" id="overlay"></div>
     <canvas id="warpCanvas" style="position: absolute; top: 0; left: 0; pointer-events: none;"></canvas>
     <script src="helper.js"></script>
   </body>

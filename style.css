@@ -3,7 +3,7 @@ body {
   background: url('/Assets/images/space-background.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto; 
   /*cursor: none;*/
 }
 
@@ -16,9 +16,9 @@ body {
 }
 */
 .planet {
-  position: absolute;
-  width: 100px;
-  height: 100px;
+  position: relative;
+  width: 200px;
+  height: 200px;
   background-size: contain;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -28,11 +28,28 @@ body {
   transform: scale(1.2);
 }
 
-#planet1 {
-  background-image: url('/Assets/images/planet1.png');
-  top: 30%;
-  left: 20%;
+.planet:hover .planet-names{
+  display: block; /* Show planet names on hover */
 }
+
+.planet:hover .moon-name{
+  display: block; /* Show planet names on hover */
+}
+
+.planet-names {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  color: #fff; /* White text */
+  padding: 5px;
+  border-radius: 5px;
+  top: 30px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Make sure it's on top */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
 
 /* Intro Section Styles */
 #intro {
@@ -162,4 +179,189 @@ h1 {
 
 .slideOutRight {
   animation: slideOutRight 1s forwards;
+}
+
+
+/* Styling for the planet container */
+#planet-container {
+  position: relative;
+  width: 100vw; /* Set a width larger than the viewport */
+  height: 100vh;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Style for each planet */
+.planet {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+/* Individual moon styling */
+.moon {
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px; /* Set the size of the moon */
+  height: 30px;
+  position: absolute;
+  border-radius: 50%; /* Makes it circular */
+  opacity: 1; /* Make the moons fully visible */
+  background-size: cover; /* Ensures the moon image fills the element */
+  transition: transform 0.5s ease; /* Smooth transition for any transformations */
+  animation: orbit 5s linear infinite; /* Orbit animation (duration set to 5s for example) */
+}
+
+.moon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Keep the text upright */
+}
+
+.moon-name {
+  position: absolute; /* Position name absolutely within the moon */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  color: white; /* Text color */
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for better visibility */
+  border-radius: 3px; /* Rounded corners */
+  font-size: 14px; /* Adjust size as needed */
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: none; /* Initially hidden */
+}
+
+.moon:hover {
+  position: absolute;
+  width: 60px; /* Set to a larger size than the moon image */
+  height: 60px; /* Same here */
+  background-size: contain; /* Keep background size */
+  background-repeat: no-repeat; /* Don't repeat background */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(var(--start-angle)) translateX(var(--distance));
+  }
+  100% {
+    transform: rotate(calc(var(--start-angle) + 360deg)) translateX(var(--distance));
+  }
+}
+
+.moon:nth-child(1) {
+  --distance: 90px; 
+  --start-angle: 0deg;
+  animation-duration: 20s;
+  background-image: url('Assets/images/moon1.png');
+}
+
+.moon:nth-child(2) {
+  --distance: 120px;
+  --start-angle: 100deg;
+  animation-duration: 30s;
+  background-image: url('Assets/images/moon2.png');
+}
+
+.moon:nth-child(3) {
+  --distance: 140px;
+  --start-angle: 250deg;
+  animation-duration: 36s;
+  background-image: url('Assets/images/moon3.png');
+}
+
+.moon:nth-child(4) {
+  --distance: 180px;
+  --start-angle: 300deg;
+  animation-duration: 40s;
+  background-image: url('Assets/images/moon4.png');
+}
+
+.moon:nth-child(5) {
+  --distance: 210px;
+  --start-angle: 100deg;
+  animation-duration: 60s;
+  background-image: url('Assets/images/moon5.png');
+}
+
+.moon:nth-child(6) {
+  --distance: 250px;
+  --start-angle: 150deg;
+  animation-duration: 92s;
+  background-image: url('Assets/images/moon6.png');
+}
+
+.moon:nth-child(7) {
+  --distance: 300px;
+  --start-angle: 200deg;
+  animation-duration: 140s;
+  background-image: url('Assets/images/moon7.png');
+}
+
+.overlay {
+  position: fixed; /* Cover the whole viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 10; /* Above other content */
+  display: none; /* Initially hidden */
+}
+
+.overlay.visible {
+  display: block; /* Show overlay */
+}
+
+.hidden {
+  display: none; /* This hides the element */
+}
+
+.moon-list {
+  position: absolute; /* Make sure the list is absolutely positioned */
+  background-color: rgba(0, 0, 0, 0.8); /* Keep the seamless look */
+  border-radius: 5px; /* Add some rounded corners */
+  padding: 10px; /* Add some padding for better appearance */
+  color: white; /* Set the text color */
+  z-index: 10; /* Ensure it is on top of other elements */
+}
+
+.moon-list ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.moon-list li {
+  margin-bottom: 8px; /* Space between items */
+  padding: 10px; /* Padding for clickable area */
+  color: white; /* Change text color to white for contrast */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background for each item */
+  border-radius: 4px; /* Rounded corners for list items */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.moon-list li:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly brighter on hover */
+}
+
+.submenu {
+  position: relative; /* Ensures the submenu appears under the main list item */
+  background-color: rgba(0, 0, 0, 0.8); /* Seamless look */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px; /* Add some padding */
+  margin-top: 5px; /* Space between the main item and submenu */
+}
+
+.submenu ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.submenu li {
+  margin-bottom: 5px; /* Space between items */
 }
