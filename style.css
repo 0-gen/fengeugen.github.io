@@ -1,26 +1,55 @@
-/* New CSS styles */
-body {
-  background: url('/Assets/images/space-background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  overflow: auto; 
-  /*cursor: none;*/
+:root{
+  --orbit-size: 200px;
+  --moon-size: 60px;
 }
 
- /*#rocketship {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-image: url('/Assets/images/rocketship.png');
-  pointer-events: none;
+body {
+  background-size: cover;
+  height: 100vh; 
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+  cursor: none; 
 }
-*/
+
+.custom-cursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  transform: rotate(0deg);
+  transition: transform 0.1s ease; /* Smooth rotation */
+}
+
+.smoke {
+  position: absolute;
+  bottom: -10px;
+  width: 50px;
+  height: 20px;
+  background-size: cover;
+  opacity: 0;
+  animation: smokeAnimation 1s infinite;
+}
+
+@keyframes smokeAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#rocket-ship.moving .smoke {
+  animation: smokeAnimation 0.5s infinite;
+}
+
+#rocket-ship.rotating {
+  transition: transform 0.1s ease-out;
+}
+
+
 .planet {
-  position: relative;
+  position: absolute;
   width: 200px;
   height: 200px;
   background-size: contain;
-  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -43,11 +72,12 @@ body {
   color: #fff; /* White text */
   padding: 5px;
   border-radius: 5px;
-  top: 30px; /* Adjust as needed */
+  top: 43%; /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10; /* Make sure it's on top */
   white-space: nowrap; /* Prevent text from wrapping */
+  font-size: x-large;
 }
 
 
@@ -187,16 +217,7 @@ h1 {
   position: relative;
   width: 100vw; /* Set a width larger than the viewport */
   height: 100vh;
-  overflow-x: auto; /* Allow horizontal scrolling */
-  overflow-y: hidden; /* Hide vertical scrolling */
   white-space: nowrap; /* Prevent wrapping */
-}
-
-/* Style for each planet */
-.planet {
-  position: absolute;
-  width: 100px;
-  height: 100px;
 }
 
 /* Individual moon styling */
@@ -204,8 +225,8 @@ h1 {
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30px; /* Set the size of the moon */
-  height: 30px;
+  width: 60px; /* Set the size of the moon */
+  height: 60px;
   position: absolute;
   border-radius: 50%; /* Makes it circular */
   opacity: 1; /* Make the moons fully visible */
@@ -240,7 +261,6 @@ h1 {
   height: 60px; /* Same here */
   background-size: contain; /* Keep background size */
   background-repeat: no-repeat; /* Don't repeat background */
-  cursor: pointer; /* Show pointer cursor on hover */
 }
 
 @keyframes orbit {
@@ -253,49 +273,49 @@ h1 {
 }
 
 .moon:nth-child(1) {
-  --distance: 90px; 
+  --distance: calc(var(--orbit-size)); 
   --start-angle: 0deg;
   animation-duration: 20s;
   background-image: url('Assets/images/moon1.png');
 }
 
 .moon:nth-child(2) {
-  --distance: 120px;
+  --distance: calc(var(--orbit-size) + var(--moon-size) );
   --start-angle: 100deg;
   animation-duration: 30s;
   background-image: url('Assets/images/moon2.png');
 }
 
 .moon:nth-child(3) {
-  --distance: 140px;
+  --distance: calc(var(--orbit-size) + (2 * var(--moon-size)) );
   --start-angle: 250deg;
   animation-duration: 36s;
   background-image: url('Assets/images/moon3.png');
 }
 
 .moon:nth-child(4) {
-  --distance: 180px;
+  --distance: calc(var(--orbit-size) + (3 * var(--moon-size)) );
   --start-angle: 300deg;
   animation-duration: 40s;
   background-image: url('Assets/images/moon4.png');
 }
 
 .moon:nth-child(5) {
-  --distance: 210px;
+  --distance: calc(var(--orbit-size) + (4 * var(--moon-size)) );
   --start-angle: 100deg;
   animation-duration: 60s;
   background-image: url('Assets/images/moon5.png');
 }
 
 .moon:nth-child(6) {
-  --distance: 250px;
+  --distance: calc(var(--orbit-size) + (5 * var(--moon-size)) );
   --start-angle: 150deg;
   animation-duration: 92s;
   background-image: url('Assets/images/moon6.png');
 }
 
 .moon:nth-child(7) {
-  --distance: 300px;
+  --distance: calc(var(--orbit-size) + (6 * var(--moon-size)) );
   --start-angle: 200deg;
   animation-duration: 140s;
   background-image: url('Assets/images/moon7.png');
@@ -364,4 +384,27 @@ h1 {
 
 .submenu li {
   margin-bottom: 5px; /* Space between items */
+}
+
+/* Smoke trail effect remains the same as previously described */
+.smoke-trail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.7); /* Grayish smoke color */
+  border-radius: 50%;
+  opacity: 0;
+  animation: smoke-rise 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes smoke-rise {
+  0% {
+      opacity: 1;
+      transform: scale(0.3) translateY(0px);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(2) translateY(0px);
+  }
 }
