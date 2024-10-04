@@ -95,13 +95,35 @@ function toggleSubmenu(submenuId) {
 }
 
 let lastPositions = []; // Array to store the last positions
-const xMovesAgo = 5; // Number of moves to consider for angle calculation
+const xMovesAgo = 2; // Number of moves to consider for angle calculation
 let timeout; // Variable to store the timeout reference
+let currentAngle = 0; // Initialize the current angle
+const rotationThreshold = 5; // Degrees to trigger rotation
+const smokeDuration = 2000; // Duration for smoke removal
+
+function throttle(func, limit) {
+  let lastFunc;
+  let lastRan;
+
+  return function(...args) {
+    if (!lastRan) {
+      func.apply(this, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(() => {
+        if ((Date.now() - lastRan) >= limit) {
+          func.apply(this, args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+}
 
 // Function to handle the custom cursor and smoke effect
 function handleMouseMove(event) {
   const cursorElement = document.querySelector('.custom-cursor'); // Get the cursor element
-
   const mouseX = event.clientX; // Get mouse X position
   const mouseY = event.clientY; // Get mouse Y position
 
@@ -119,37 +141,51 @@ function handleMouseMove(event) {
   }
 
   // Calculate the change in position from x moves ago
-  const deltaX = lastPositions[lastPositions.length - 1].x - lastPositions[0].x; // Most recent position - position x moves ago
-  const deltaY = lastPositions[lastPositions.length - 1].y - lastPositions[0].y; // Most recent position - position x moves ago
+  const deltaX = lastPositions[lastPositions.length - 1].x - lastPositions[0].x;
+  const deltaY = lastPositions[lastPositions.length - 1].y - lastPositions[0].y;
 
-  // Update the cursor position to follow the mouse
-  cursorElement.style.left = `${mouseX}px`;
-  cursorElement.style.top = `${mouseY}px`;
+  // Update the cursor position to follow the mouse, centering it
+  const cursorWidth = cursorElement.offsetWidth; // Get the width of the cursor image
+  const cursorHeight = cursorElement.offsetHeight; // Get the height of the cursor image
 
-  // Calculate the angle of rotation based on the change in position
-  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90.0;
+  cursorElement.style.left = `${mouseX - cursorWidth / 2}px`; // Center the cursor horizontally
+  cursorElement.style.top = `${mouseY - cursorHeight / 2}px`; // Center the cursor vertically
 
-  // Apply the rotation to the cursor immediately
-  cursorElement.style.transform = `rotate(${angle}deg)`;
+  // Calculate the target angle of rotation based on the change in position
+  let targetAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+
+  // Calculate the shortest angle difference and update the current angle
+  const angleDifference = shortestAngleDifference(currentAngle, targetAngle);
+
+  // Only apply rotation if the change is significant
+  if (Math.abs(angleDifference) > rotationThreshold) {
+    currentAngle += angleDifference; // Update current angle based on the difference
+    cursorElement.style.transform = `rotate(${currentAngle}deg)`; // Apply rotation
+  }
 
   // Reset the timeout to change the angle to 0 degrees after inactivity
   clearTimeout(timeout);
   timeout = setTimeout(() => {
+    currentAngle = 0; // Reset current angle
     cursorElement.style.transform = 'rotate(0deg)'; // Change angle to 0 degrees
   }, 500); // Adjust the delay (in milliseconds) as needed
 
-  // Position the smoke at the bottom middle of the cursor
+  // Create and position smoke only if needed
+  createSmoke(cursorElement);
+}
+
+function createSmoke(cursorElement) {
   const cursorRect = cursorElement.getBoundingClientRect();
   const smoke = document.createElement('div');
   smoke.classList.add('smoke-trail'); // Class for smoke trail styling
 
   // Calculate the position of the smoke (bottom-middle of the cursor)
   const smokeX = cursorRect.left + cursorRect.width / 2 - smoke.offsetWidth / 2;
-  const smokeY = cursorRect.top + cursorRect.height;  // Positioning at the bottom
+  const smokeY = cursorRect.top + cursorRect.height; // Positioning at the bottom
 
   // Set smoke position relative to the cursor
   smoke.style.left = `${smokeX - 5}px`;
-  smoke.style.top = `${smokeY - 20}px`;
+  smoke.style.top = `${smokeY - 30}px`;
 
   // Append the smoke trail to the body
   document.body.appendChild(smoke);
@@ -157,7 +193,12 @@ function handleMouseMove(event) {
   // Remove the smoke after the animation finishes (2 seconds)
   setTimeout(() => {
     smoke.remove();
-  }, 2000);
+  }, smokeDuration);
+}
+
+function shortestAngleDifference(currentAngle, targetAngle) {
+  const difference = (targetAngle - currentAngle + 180) % 360 - 180; // Normalize the angle
+  return difference;
 }
 
 // Create the custom cursor element dynamically
@@ -168,8 +209,7 @@ function createCustomCursor() {
   document.body.appendChild(cursor); // Append to body
 }
 
-// Initialize the custom cursor
+// Add event listener with throttled function
+const throttledMouseMove = throttle(handleMouseMove, 16); // Adjust limit as needed
+document.addEventListener('mousemove', throttledMouseMove);
 createCustomCursor();
-
-// Add event listener to track mouse movement and apply the custom cursor effect
-document.body.addEventListener('mousemove', handleMouseMove);

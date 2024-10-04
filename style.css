@@ -4,18 +4,20 @@
 }
 
 body {
-  background-size: cover;
+  background-size: 150%, 150%;
+  background-repeat:  no-repeat;
+  background-position: center;
   height: 100vh; 
   overflow-x: auto; /* Allow horizontal scrolling */
-  overflow-y: hidden; /* Hide vertical scrolling */
+  overflow-y: auto; /* Hide vertical scrolling */
   white-space: nowrap; /* Prevent wrapping */
-  cursor: none; 
+  cursor: pointer; 
 }
 
 .custom-cursor {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   pointer-events: none;
   transform: rotate(0deg);
   transition: transform 0.1s ease; /* Smooth rotation */
@@ -136,6 +138,7 @@ h1 {
   color: #fff; /* White text */
   text-decoration: none; /* Remove underline */
   transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+  cursor: none;
 }
 
 .button.stroke {
