@@ -144,13 +144,6 @@ function handleMouseMove(event) {
   const deltaX = lastPositions[lastPositions.length - 1].x - lastPositions[0].x;
   const deltaY = lastPositions[lastPositions.length - 1].y - lastPositions[0].y;
 
-  // Update the cursor position to follow the mouse, centering it
-  const cursorWidth = cursorElement.offsetWidth; // Get the width of the cursor image
-  const cursorHeight = cursorElement.offsetHeight; // Get the height of the cursor image
-
-  cursorElement.style.left = `${mouseX - cursorWidth / 2}px`; // Center the cursor horizontally
-  cursorElement.style.top = `${mouseY - cursorHeight / 2}px`; // Center the cursor vertically
-
   // Calculate the target angle of rotation based on the change in position
   let targetAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
 
@@ -162,6 +155,19 @@ function handleMouseMove(event) {
     currentAngle += angleDifference; // Update current angle based on the difference
     cursorElement.style.transform = `rotate(${currentAngle}deg)`; // Apply rotation
   }
+
+  // Calculate the rocketship's tip offset relative to its rotation
+  const cursorWidth = cursorElement.offsetWidth;
+  const cursorHeight = cursorElement.offsetHeight;
+
+  // Offset the custom cursor so the tip is at the mouse pointer
+  const radians = (currentAngle - 90) * (Math.PI / 180); // Convert angle to radians
+  const offsetX = (cursorWidth / 4) * Math.cos(radians); // Horizontal offset based on rotation
+  const offsetY = (cursorHeight / 4) * Math.sin(radians); // Vertical offset based on rotation
+
+  // Update the cursor position, aligning the tip (top-middle) to the mouse pointer
+  cursorElement.style.left = `${mouseX - offsetX}px`;
+  cursorElement.style.top = `${mouseY - offsetY}px`;
 
   // Reset the timeout to change the angle to 0 degrees after inactivity
   clearTimeout(timeout);
@@ -204,7 +210,7 @@ function shortestAngleDifference(currentAngle, targetAngle) {
 // Create the custom cursor element dynamically
 function createCustomCursor() {
   const cursor = document.createElement('img');
-  cursor.src = '/Assets/images/smol_rocketship.png'; // Path to the rocketship image
+  cursor.src = 'Assets/images/smol_rocketship.png'; // Path to the rocketship image
   cursor.classList.add('custom-cursor'); // Add styling
   document.body.appendChild(cursor); // Append to body
 }
