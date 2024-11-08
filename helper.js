@@ -124,8 +124,8 @@ function throttle(func, limit) {
 // Function to handle the custom cursor and smoke effect
 function handleMouseMove(event) {
   const cursorElement = document.querySelector('.custom-cursor'); // Get the cursor element
-  const mouseX = event.clientX; // Get mouse X position
-  const mouseY = event.clientY; // Get mouse Y position
+  const mouseX = event.clientX + window.scrollX; // Get mouse X position with scroll
+  const mouseY = event.clientY + window.scrollY; // Get mouse Y position with scroll
 
   // Update the last positions array
   lastPositions.push({ x: mouseX, y: mouseY });
@@ -166,9 +166,9 @@ function handleMouseMove(event) {
   const offsetY = (cursorHeight / 4) * Math.sin(radians); // Vertical offset based on rotation
 
   // Update the cursor position, aligning the tip (top-middle) to the mouse pointer
-  cursorElement.style.left = `${mouseX - offsetX}px`;
-  cursorElement.style.top = `${mouseY - offsetY}px`;
-
+  cursorElement.style.left = `${mouseX - offsetX - 25}px`;
+  cursorElement.style.top = `${mouseY - offsetY - 25}px`;
+  
   // Reset the timeout to change the angle to 0 degrees after inactivity
   clearTimeout(timeout);
   timeout = setTimeout(() => {
@@ -186,10 +186,10 @@ function createSmoke(cursorElement) {
   smoke.classList.add('smoke-trail'); // Class for smoke trail styling
 
   // Calculate the position of the smoke (bottom-middle of the cursor)
-  const smokeX = cursorRect.left + cursorRect.width / 2 - smoke.offsetWidth / 2;
-  const smokeY = cursorRect.top + cursorRect.height; // Positioning at the bottom
+  const smokeX = cursorRect.left + window.scrollX + cursorRect.width / 2 - smoke.offsetWidth / 2;
+  const smokeY = cursorRect.top + window.scrollY + cursorRect.height; // Positioning at the bottom
 
-  // Set smoke position relative to the cursor
+  // Set smoke position relative to the cursor, accounting for scroll
   smoke.style.left = `${smokeX - 5}px`;
   smoke.style.top = `${smokeY - 30}px`;
 

@@ -11,7 +11,7 @@ body {
   overflow-x: auto; /* Allow horizontal scrolling */
   overflow-y: auto; /* Hide vertical scrolling */
   white-space: nowrap; /* Prevent wrapping */
-  cursor: pointer; 
+  cursor: none; 
 }
 
 .custom-cursor {
@@ -21,6 +21,7 @@ body {
   pointer-events: none;
   transform: rotate(0deg);
   transition: transform 0.1s ease; /* Smooth rotation */
+  z-index: 999999;
 }
 
 .smoke {
@@ -139,6 +140,7 @@ h1 {
   text-decoration: none; /* Remove underline */
   transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
   cursor: none;
+  z-index: 100;
 }
 
 .button.stroke {
