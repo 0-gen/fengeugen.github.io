@@ -215,7 +215,16 @@ function createCustomCursor() {
   document.body.appendChild(cursor); // Append to body
 }
 
+
+addEventListener("mousedown", function(e) {
+  if (e.button === 1) {
+    e.preventDefault();
+  }
+});
+
+
 // Add event listener with throttled function
 const throttledMouseMove = throttle(handleMouseMove, 16); // Adjust limit as needed
 document.addEventListener('mousemove', throttledMouseMove);
 createCustomCursor();
+
