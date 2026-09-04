@@ -1,72 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eugen Feng's portfolio, showcasing projects, work experience, and more.">
-    <title>Eugen Feng - Portfolio</title>
-    <link href="https://jsdelivr.net" rel="stylesheet">
+
+    <title>Eugen Feng | Portfolio</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/helper.js" defer></script>
-  </head>
+</head>
 
-  <body style="background-image: url('Assets/images/landing background.jpg');">
-    <!-- Intro section
-    ================================================== -->
-    <section id="intro">
-      <div class="intro-overlay"></div>
-      <div class="intro-content">
-          <div class="row">
-              <div class="col-twelve">
-                  <h5>Hello, World!</h5>
-                  <h1>I am Eugen Feng</h1>
-                  <button class="button stroke" onclick="slideToAbout()"> About Me </button>
-              </div>
-          </div>
-      </div>
-    </section>
+<body>
+    <!-- Main Portfolio -->
+    <main>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-info">
+                <!-- Profile Picture -->
+                <figure class="avatar-box">
+                    <img src="Assets/images/webpage-background.jpg"
+                         alt="Profile Picture">
+                </figure>
 
-    <!-- About me section
-    ================================================== -->
-    <section id="about" style="display: none;">
-        <div class="portfolio">
-
-            <!-- Left panel -->
-            <aside class="sidebar">
-
-            </aside>
-
-
-            <!-- Main card -->
-            <main class="main-card">
-
-                <!-- Top container -->
-                <div class="container about-container">
-
+                <!-- Profile Information -->
+                <div class="info-content">
+                    <h1 class="name">Eugen Feng</h1>
+                    <p class="title">Software Engineer</p>
                 </div>
+                <!-- Mobile Contact Button -->
+                <button class="info_more-btn">
+                    <span>Show Contacts</span>
+                </button>
+            </div>
+            <!-- Contact Information -->
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+            <ul class="contacts-list">
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/email.png"
+                      alt="Email"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">Email</p>
+                      <a
+                          href="mailto:fengeugen@gmail.com"
+                          class="contact-link"
+                      >
+                          fengeugen@gmail.com
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/github.png"
+                      alt="GitHub"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">GitHub</p>
+                      <a
+                          href="https://github.com/0-gen"
+                          class="contact-link"
+                          target="_blank"
+                      >
+                          0-gen
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/linkedin.png"
+                      alt="LinkedIn"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">LinkedIn</p>
+                      <a
+                          href="https://www.linkedin.com/in/fengeugen/"
+                          class="contact-link"
+                          target="_blank"
+                      >
+                          fengeugen
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/location.png"
+                      alt="Location"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">Location</p>
+                      <p class="contact-link">
+                          New York City, United States
+                      </p>
+                  </div>
+              </li>
+          </ul>
+                <div class="separator"></div>
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a
+                            href="https://github.com/0-gen"
+                            target="_blank"
+                        >
+                            <img
+                                src="Assets/icons/github.png"
+                                alt="GitHub"
+                                width="24"
+                            >
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a
+                            href="https://www.linkedin.com/in/fengeugen/"
+                            target="_blank"
+                        >
+                            <img
+                                src="Assets/icons/linkedin.png"
+                                alt="LinkedIn"
+                                width="24"
+                            >
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
 
 
-                <!-- Projects container -->
-                <div class="container projects-container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <button class="navbar-link active">
+                            About
+                        </button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link">
+                            Resume
+                        </button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link">
+                            Projects
+                        </button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link">
+                            Contact
+                        </button>
+                    </li>
+                </ul>
+            </nav>
 
-                    <div class="project-card"></div>
-                    <div class="project-card"></div>
-                    <div class="project-card"></div>
+            <!-- About -->
+            <article class="about active" data-page="about">
 
+                <header>
+                    <h2 class="h2 article-title">About Me</h2>
+                </header>
+
+                <!-- About Me -->
+                <section class="about-intro">
+                    <p>
+                        I'm a Systems Engineer and Software Engineer with a background
+                        in electrical engineering, software development, and machine
+                        intelligence.
+                    </p>
+
+                    <p>
+                        I'm particularly interested in building software that connects
+                        data, AI, and real-world applications.
+                    </p>
+                </section>
+
+
+                <!-- About Cards -->
+                <section class="about-cards">
+
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <h3 class="h3">What I Do</h3>
+
+                            <p>
+                                I build full-stack applications, APIs, data-driven
+                                systems, and machine learning solutions.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <ion-icon name="bulb-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <h3 class="h3">What Interests Me</h3>
+
+                            <p>
+                                I'm interested in AI, machine learning, software
+                                engineering, computer vision, and intelligent systems.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <ion-icon name="rocket-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <h3 class="h3">Currently Building</h3>
+
+                            <p>
+                                I'm working on projects involving AI, APIs, RAG,
+                                computer vision, and modern web applications.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Outside of CS -->
+                <section class="outside-cs">
+
+                    <h2 class="section-title">Personal Hobbies and Interests</h2>
+
+                    <div class="outside-cs-grid">
+
+                        <div class="outside-card">
+                            <div class="outside-icon">🧗</div>
+                            <h4>Bouldering</h4>
+                            <p>
+                                Climbing, working through problems, and occasionally
+                                wondering why I thought that route looked easy.
+                            </p>
+                        </div>
+
+
+                        <div class="outside-card">
+                            <div class="outside-icon">🔨</div>
+                            <h4>DIY Home Projects</h4>
+                            <p>
+                                Building, fixing, and improving things around the house.
+                                If it can be automated, modified, or built, I'm interested.
+                            </p>
+                        </div>
+
+
+                        <div class="outside-card">
+                            <div class="outside-icon">☕</div>
+                            <h4>Coffee Enthusiast</h4>
+                            <p>
+                                Experimenting with different beans, brewing methods,
+                                and trying to make the perfect cup.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="photo-carousel">
+
+                      <div class="carousel-track">
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/b1.jpg" alt="Personal photo">
+                          </div>
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/c1.jpg" alt="Personal photo">
+                          </div>
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/c2.jpg" alt="Personal photo">
+                          </div>
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/d1.jpg" alt="Personal photo">
+                          </div>
+                          
+                          <div class="carousel-slide">
+                              <img src="Assets/images/b1.jpg" alt="Personal photo">
+                          </div>
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/c1.jpg" alt="Personal photo">
+                          </div>
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/c2.jpg" alt="Personal photo">
+                          </div>
+
+                          <div class="carousel-slide">
+                              <img src="Assets/images/d1.jpg" alt="Personal photo">
+                          </div>
+                      </div>
+
+                  </div>
+
+                </section>
+
+            </article>
+
+            <!-- Resume -->
+            <article class="resume">
+                <header>
+                    <h2 class="h2 article-title">Resume</h2>
+                </header>
+                <!-- Content will go here -->
+            </article>
+
+            <!-- Projects -->
+            <article class="projects">
+                <header>
+                    <h2 class="h2 article-title">Projects</h2>
+                </header>
+                <div class="project-list">
+                    <!-- Project cards will go here -->
                 </div>
+            </article>
 
-
-                <!-- Bottom container -->
-                <div class="container bottom-container">
-
-                </div>
-
-            </main>
-
+            <!-- Contact -->
+            <article class="contact">
+                <header>
+                    <h2 class="h2 article-title">Contact</h2>
+                </header>
+                <!-- Content will go here -->
+            </article>
         </div>
+    </main>
 
-    </section>
+
+    <!-- JavaScript -->
+    <script src="js/helper.js"></script>
 
 </body>
 
 </html>
+

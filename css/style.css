@@ -1,247 +1,553 @@
-/* Slide-in from the right (for about section when clicked "Learn More") */
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+/* ================================
+   RESET
+================================ */
 
-/* Slide-out to the left (for intro section when clicked "Learn More") */
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-/* Applying the animations */
-.slideInRight {
-  animation: slideInRight 1s forwards;
-}
-
-.slideOutLeft {
-  animation: slideOutLeft 1s forwards;
-}
-
-
-html,
-body {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, sans-serif;
 }
 
 body {
-    overflow-x: hidden;
-    overflow-y: auto;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
 }
 
-#intro {
-    position: relative;
-    min-height: 100vh;
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    background-image: url('../Assets/images/landing background.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+button {
+    font: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* ================================
+   MAIN LAYOUT
+================================ */
+
+main {
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 100%;
+
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   SIDEBAR INFO
+================================ */
+
+.sidebar-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-box {
+    width: 80px;
+    height: 80px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.title {
+    margin-top: 5px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ================================
+   SIDEBAR CONTACTS
+================================ */
+
+.sidebar-info_more {
+    margin-top: 20px;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+
+    margin: 20px 0;
+
+    background: #333;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-list {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+    width: 100%;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+.navbar {
+    width: 100%;
+
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-link {
+    padding: 15px 20px;
+
+    color: #aaa;
+
+    transition: color 0.2s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: #fff;
+}
+
+
+/* ================================
+   CONTENT ARTICLES
+================================ */
+
+article {
+    width: 100%;
+
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    display: none;
+}
+
+article.active {
+    display: block;
+}
+
+
+/* ================================
+   ARTICLE TITLE
+================================ */
+
+.article-title {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (min-width: 768px) {
+
+    main {
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 0;
+    }
+    .sidebar{
+      margin-top: 30px;
+      padding: 30px;
+    }
+    article {
+        padding: 30px;
+        
+    }
+}
+
+
+/* ================================
+   DESKTOP
+================================ */
+
+@media (min-width: 1024px) {
+
+    main {
+        max-width: 950px;
+    }
+
+    .sidebar {
+      margin-top: 30px;
+    }
+}
+
+
+/* ================================
+   LARGE DESKTOP
+================================ */
+
+@media (min-width: 1250px) {
+    main {
+        max-width: 1200px;
+        margin: 30px auto 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 30px;
+        width: 340px;
+        height: fit-content;
+        max-height: none;
+        overflow: visible;
+        flex-shrink: 0;
+    }
+
+    .sidebar-info_more {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    .main-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    article {
+        min-height: 700px;
+        margin-bottom: 30px;
+    }
+
+    .navbar {
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+
+    .info_more-btn {
+        display: none;
+    }
+}
+
+/* ================================
+   MOBILE SIDEBAR CONTACTS
+================================ */
+
+.sidebar {
+    max-height: 140px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 30px;
+}
+
+.sidebar.active {
+    max-height: 500px;
+}
+
+.sidebar-info_more {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.active .sidebar-info_more {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================
+   DESKTOP SIDEBAR
+================================ */
+
+@media (min-width: 1250px) {
+
+    .sidebar {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .sidebar-info_more {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .info_more-btn {
+        display: none;
+    }
+
+}
+
+/* ================================
+   ABOUT
+================================ */
+
+.about-intro {
+    margin-bottom: 35px;
+}
+
+.about-intro p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   ABOUT CARDS
+================================ */
+
+.about-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.about-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 25px;
+
+    background: linear-gradient(
+        to bottom right,
+        #222,
+        #151515
+    );
+
+    border: 1px solid #333;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: #666;
+}
+
+.about-card-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 12px;
+
+    color: #f0c75e;
+    font-size: 24px;
 }
 
-.intro-overlay {
-  position: absolute; /* Overlay over the background */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, .3); /* Semi-transparent black overlay */
+.about-card h3 {
+    margin-bottom: 8px;
 }
 
-.intro-content {
-  position: relative; /* Keep content above the overlay */
-  z-index: 1; /* Ensure content is above the overlay */
-  color: #fff; /* White text for visibility */
+.about-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.row {
-  max-width: 1200px; /* Limit the width of the row */
-  margin: 0 auto; /* Center the row */
-  width: 100%; /* Full width */
+/* ================================
+   OUTSIDE OF CS
+================================ */
+
+.outside-cs {
+    margin-top: 40px;
 }
 
-.col-twelve {
-  width: 100%; /* Full width of the column */
+.section-title {
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
-h5 {
-  font-size: 24px; /* Size for the subheading */
-  margin-bottom: 10px; /* Space below the subheading */
-}
 
-h1 {
-  font-size: 48px; /* Size for the main heading */
-  margin-bottom: 20px; /* Space below the main heading */
-}
+/* ================================
+   HOBBY CARDS
+================================ */
 
-.button {
-  display: inline-block; /* Button as inline block */
-  padding: 10px 20px; /* Padding for the button */
-  border: 2px solid #fff; /* White border */
-  color: #fff; /* White text */
-  text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
-  z-index: 100;
-}
-
-.button.stroke {
-  background: transparent; /* Transparent background */
-}
-
-.button.stroke:hover {
-  background: #858383; /* White background on hover */
-  color: #000; /* Black text on hover */
-}
-
-.overlay {
-  position: fixed; /* Cover the whole viewport */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  z-index: 10; /* Above other content */
-  display: none; /* Initially hidden */
-}
-
-.overlay.visible {
-  display: block; /* Show overlay */
-}
-
-.hidden {
-  display: none; /* This hides the element */
-}
-
-/* =========================
-   Portfolio Layout
-========================= */
-
-#about {
-    min-height: 100vh;
-    padding: 50px;
-}
-
-.portfolio {
-    max-width: 1400px;
-    margin: 0 auto;
-
+.outside-cs-grid {
     display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 25px;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
-/* Left sidebar */
-.sidebar {
-    min-height: 700px;
-
-    border: 2px solid white;
-    border-radius: 20px;
-
-    background: rgb(46, 46, 46);
-}
-
-/* Large main card */
-.main-card {
-    padding: 25px;
-
-    border: 2px solid white;
-    border-radius: 20px;
-
-    background: rgb(51, 49, 49);
-
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-/* Containers inside main card */
-.container {
-    border: 2px solid white;
-    border-radius: 15px;
+.outside-card {
     padding: 20px;
-}
 
-/* About */
-.about-container {
-    min-height: 200px;
-}
-
-/* Projects */
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-
-    min-height: 400px;
-}
-
-/* Individual project boxes */
-.project-card {
-    min-height: 180px;
-
-    border: 2px solid white;
+    background: #151515;
+    border: 1px solid #333;
     border-radius: 15px;
 
-    background: rgb(58, 53, 53);
+    transition: transform 0.25s ease,
+                border-color 0.25s ease;
 }
 
-/* Bottom */
-.bottom-container {
-    min-height: 200px;
+.outside-card:hover {
+    transform: translateY(-3px);
+    border-color: #555;
 }
 
-
-/* =========================
-   Smaller Screens
-========================= */
-
-@media (max-width: 900px) {
-
-    #about {
-        padding: 25px;
-    }
-
-    .portfolio {
-        grid-template-columns: 200px 1fr;
-    }
-
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
+.outside-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
 }
 
+.outside-card h4 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
 
-@media (max-width: 600px) {
+.outside-card p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-    #about {
-        padding: 15px;
+/* ================================
+   PHOTO CAROUSEL
+================================ */
+
+.photo-carousel {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: carousel-scroll 20s linear infinite;
+}
+
+.carousel-slide {
+    width: 50px;
+    height: 250px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (min-width: 768px) {
+
+    .carousel-slide {
+        flex-basis: 65%;
+        height: 350px;
     }
 
-    .portfolio {
-        grid-template-columns: 1fr;
+}
+@keyframes carousel-scroll {
+    from {
+        transform: translateX(0);
     }
 
-    .sidebar {
-        min-height: 200px;
+    to {
+        transform: translateX(calc(-3 * (350px + 10px)));
     }
 }
