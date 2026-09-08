@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eugen Feng | Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Main Portfolio -->
+    <main>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-info">
+                <!-- Profile Picture -->
+                <figure class="avatar-box">
+                    <img src="Assets/images/profile_picture.jpg"
+                         alt="Profile Picture">
+                </figure>
+
+                <!-- Profile Information -->
+                <div class="info-content">
+                    <h1 class="name">Eugen Feng</h1>
+                    <p class="title">Software Engineer</p>
+                </div>
+                <!-- Mobile Contact Button -->
+                <button class="info_more-btn">
+                    <span>Show Contacts</span>
+                </button>
+            </div>
+            <!-- Contact Information -->
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+            <ul class="contacts-list">
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/email.png"
+                      alt="Email"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">Email</p>
+                      <a
+                          href="mailto:fengeugen@gmail.com"
+                          class="contact-link"
+                      >
+                          fengeugen@gmail.com
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/github.png"
+                      alt="GitHub"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">GitHub</p>
+                      <a
+                          href="https://github.com/0-gen"
+                          class="contact-link"
+                          target="_blank"
+                      >
+                          0-gen
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/linkedin.png"
+                      alt="LinkedIn"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">LinkedIn</p>
+                      <a
+                          href="https://www.linkedin.com/in/fengeugen/"
+                          class="contact-link"
+                          target="_blank"
+                      >
+                          fengeugen
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/location.png"
+                      alt="Location"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">Location</p>
+                      <p class="contact-link">
+                          New York City, United States
+                      </p>
+                  </div>
+              </li>
+          </ul>
+                <div class="separator"></div>
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a
+                            href="https://github.com/0-gen"
+                            target="_blank"
+                        >
+                            <img
+                                src="Assets/icons/github.png"
+                                alt="GitHub"
+                                width="24"
+                            >
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a
+                            href="https://www.linkedin.com/in/fengeugen/"
+                            target="_blank"
+                        >
+                            <img
+                                src="Assets/icons/linkedin.png"
+                                alt="LinkedIn"
+                                width="24"
+                            >
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link">
+                            About
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="resume.html" class="navbar-link">
+                            Resume
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <button href="project.html" class="navbar-link active">
+                            Projects
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Projects -->
+            <article class="projects active" data-page="projects">
+                <header>
+                    <h2 class="h2 article-title">Projects</h2>
+                </header>
+
+                <section class="project-list">
+
+
+                    <!-- DOCUMENT SUMMARIZER -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">01</span>
+
+                            <div>
+                                <h3>Document Summarizer</h3>
+                                <p class="project-type">AI / Natural Language Processing</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Built an AI-powered document processing application for
+                            extracting and summarizing information from uploaded documents.
+                            Developed a Python-based processing pipeline with a modular
+                            application structure for document analysis and summarization.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>LLMs</span>
+                            <span>NLP</span>
+                            <span>Document Processing</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Document-Summarizer"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAKE NEWS -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">02</span>
+
+                            <div>
+                                <h3>Fake News Classification Model</h3>
+                                <p class="project-type">Machine Learning</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Developed a machine learning model for classifying news
+                            articles as real or fake using natural language processing
+                            and supervised learning techniques.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>NLP</span>
+                            <span>Jupyter</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Fake-News-Classification-Model"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- HANDWRITTEN RECOGNITION -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">03</span>
+
+                            <div>
+                                <h3>Handwritten Recognition</h3>
+                                <p class="project-type">Computer Vision / Machine Learning</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Developed a handwritten character recognition model using
+                            machine learning techniques to classify handwritten inputs.
+                            Explored image preprocessing and model training for
+                            computer vision applications.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Computer Vision</span>
+                            <span>Jupyter</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Handwritten-Recognition"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMAGE MOSAIC -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">04</span>
+
+                            <div>
+                                <h3>Image Mosaic</h3>
+                                <p class="project-type">Computer Vision</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Developed a Python-based image mosaic application that
+                            processes and combines image data to generate large composite
+                            images from smaller image segments.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Computer Vision</span>
+                            <span>Image Processing</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Image-Mosaic"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- MOTION DETECTION -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">05</span>
+
+                            <div>
+                                <h3>Motion Detection Using Image Filtering</h3>
+                                <p class="project-type">Computer Vision</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Implemented motion detection using image filtering techniques
+                            to identify changes between video frames and detect movement
+                            within a scene.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Computer Vision</span>
+                            <span>Image Processing</span>
+                            <span>Motion Detection</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Motion-Detection-Using-Simple-Image-Filtering"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- IOS SENSOR APPLICATION -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">06</span>
+
+                            <div>
+                                <h3>Hardware Sensor iOS Application</h3>
+                                <p class="project-type">Mobile / Embedded Systems</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Developed an iOS application that interfaces with hardware
+                            sensors to collect and display sensor data, connecting
+                            mobile software with physical hardware.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Swift</span>
+                            <span>iOS</span>
+                            <span>Hardware Sensors</span>
+                            <span>Embedded Systems</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Hardware-Sensor-IOS-Application"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FROGGER -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">07</span>
+
+                            <div>
+                                <h3>Frogger Game</h3>
+                                <p class="project-type">Systems Programming</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Implemented a Frogger-style game in C, applying low-level
+                            programming concepts, game logic, memory management, and
+                            hardware-oriented programming techniques.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>C</span>
+                            <span>Systems Programming</span>
+                            <span>Game Development</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Frogger-Game"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CLUSTER ANALYSIS -->
+                    <div class="project-item">
+
+                        <div class="project-header">
+                            <span class="project-number">08</span>
+
+                            <div>
+                                <h3>Unsupervised Training &amp; Cluster Analysis</h3>
+                                <p class="project-type">Machine Learning</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Explored unsupervised machine learning techniques for
+                            identifying patterns and grouping data through cluster
+                            analysis.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Machine Learning</span>
+                            <span>Unsupervised Learning</span>
+                            <span>Cluster Analysis</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/0-gen/Unsupervised-Training---Cluster-Analysis"
+                            target="_blank">
+                                GitHub ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/helper.js"></script>
+
+</body>
+
+</html>
+

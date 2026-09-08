@@ -446,6 +446,7 @@ article.active {
     line-height: 1.6;
 }
 
+
 /* ================================
    OUTSIDE OF CS
 ================================ */
@@ -550,4 +551,452 @@ article.active {
     to {
         transform: translateX(calc(-3 * (350px + 10px)));
     }
+}
+
+/* ================================
+   RESUME
+================================ */
+
+.resume {
+    position: relative;
+}
+
+.resume > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+.resume-download {
+    color: #f0c75e;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.resume-download:hover {
+    color: #fff;
+}
+
+
+/* ================================
+   RESUME SECTION
+================================ */
+
+.resume-section {
+    margin-bottom: 60px;
+}
+
+.resume-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.section-number {
+    color: #f0c75e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.resume-section-heading h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   TIMELINE
+================================ */
+
+.resume-timeline {
+    position: relative;
+}
+
+.resume-timeline::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 150px;
+
+    width: 1px;
+    background: #333;
+}
+
+.resume-item {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 120px 30px 1fr;
+
+    margin-bottom: 45px;
+}
+
+.resume-date {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 3px;
+
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.resume-marker {
+    position: relative;
+}
+
+.resume-marker::before {
+    content: "";
+
+    position: absolute;
+    top: 4px;
+    left: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    transform: translateX(-50%);
+
+    background: #111;
+    border: 2px solid #f0c75e;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.resume-content {
+    padding-left: 25px;
+}
+
+.resume-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #f0c75e;
+    font-size: 13px;
+}
+
+.resume-content h4 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.resume-description {
+    max-width: 650px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    padding-left: 20px;
+}
+
+.resume-description li {
+    margin-bottom: 8px;
+}
+
+/* ================================
+   SKILL TAGS
+================================ */
+
+.resume-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.resume-tags span {
+    padding: 6px 10px;
+
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    color: #aaa;
+    font-size: 11px;
+
+    background: #151515;
+}
+
+
+/* ================================
+   SKILLS
+================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.skill-group {
+    padding: 20px;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    background: #151515;
+}
+
+.skill-category {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #f0c75e;
+    font-size: 12px;
+}
+
+.skill-group p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   CERTIFICATIONS
+================================ */
+
+.certifications {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.certification {
+    padding: 20px;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    background: #151515;
+}
+
+.certification span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #f0c75e;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.certification p {
+    color: #bbb;
+    font-size: 13px;
+}
+
+.certification small {
+    display: block;
+    margin-top: 6px;
+    color: #888;
+    font-size: 11px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+
+    .resume > header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .resume-timeline::before {
+        left: 5px;
+    }
+
+    .resume-item {
+        grid-template-columns: 20px 1fr;
+    }
+
+    .resume-date {
+        grid-column: 2;
+        grid-row: 1;
+
+        margin-bottom: 8px;
+
+        text-align: left;
+    }
+
+    .resume-marker {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .resume-content {
+        grid-column: 2;
+        grid-row: 2;
+
+        padding-left: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   PROJECTS
+================================ */
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.project-item {
+    position: relative;
+    padding: 30px 0;
+    border-bottom: 1px solid #333;
+}
+
+.project-item:first-child {
+    padding-top: 0;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+
+/* ================================
+   PROJECT HEADER
+================================ */
+
+.project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.project-number {
+    flex-shrink: 0;
+
+    color: #f0c75e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.project-header h3 {
+    margin-bottom: 5px;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.project-type {
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* ================================
+   PROJECT DESCRIPTION
+================================ */
+
+.project-description {
+    max-width: 700px;
+    margin-left: 32px;
+
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   PROJECT TAGS
+================================ */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 18px;
+    margin-left: 32px;
+}
+
+.project-tags span {
+    padding: 6px 10px;
+
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    color: #aaa;
+    font-size: 11px;
+}
+
+
+/* ================================
+   PROJECT LINKS
+================================ */
+
+.project-links {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 20px;
+    margin-left: 32px;
+}
+
+.project-links a {
+    color: #f0c75e;
+    font-size: 13px;
+
+    transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+    color: #fff;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+
+    .project-item {
+        padding: 25px 0;
+    }
+
+    .project-header {
+        gap: 12px;
+    }
+
+    .project-header h3 {
+        font-size: 18px;
+    }
+
+    .project-description,
+    .project-tags,
+    .project-links {
+        margin-left: 0;
+    }
+
 }

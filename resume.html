@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eugen Feng | Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Main Portfolio -->
+    <main>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-info">
+                <!-- Profile Picture -->
+                <figure class="avatar-box">
+                    <img src="Assets/images/profile_picture.jpg"
+                         alt="Profile Picture">
+                </figure>
+
+                <!-- Profile Information -->
+                <div class="info-content">
+                    <h1 class="name">Eugen Feng</h1>
+                    <p class="title">Software Engineer</p>
+                </div>
+                <!-- Mobile Contact Button -->
+                <button class="info_more-btn">
+                    <span>Show Contacts</span>
+                </button>
+            </div>
+            <!-- Contact Information -->
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+            <ul class="contacts-list">
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/email.png"
+                      alt="Email"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">Email</p>
+                      <a
+                          href="mailto:fengeugen@gmail.com"
+                          class="contact-link"
+                      >
+                          fengeugen@gmail.com
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/github.png"
+                      alt="GitHub"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">GitHub</p>
+                      <a
+                          href="https://github.com/0-gen"
+                          class="contact-link"
+                          target="_blank"
+                      >
+                          0-gen
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/linkedin.png"
+                      alt="LinkedIn"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">LinkedIn</p>
+                      <a
+                          href="https://www.linkedin.com/in/fengeugen/"
+                          class="contact-link"
+                          target="_blank"
+                      >
+                          fengeugen
+                      </a>
+                  </div>
+              </li>
+              <li class="contact-item">
+                  <img
+                      src="Assets/icons/location.png"
+                      alt="Location"
+                      width="24"
+                  >
+                  <div class="contact-info">
+                      <p class="contact-title">Location</p>
+                      <p class="contact-link">
+                          New York City, United States
+                      </p>
+                  </div>
+              </li>
+          </ul>
+                <div class="separator"></div>
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a
+                            href="https://github.com/0-gen"
+                            target="_blank"
+                        >
+                            <img
+                                src="Assets/icons/github.png"
+                                alt="GitHub"
+                                width="24"
+                            >
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a
+                            href="https://www.linkedin.com/in/fengeugen/"
+                            target="_blank"
+                        >
+                            <img
+                                src="Assets/icons/linkedin.png"
+                                alt="LinkedIn"
+                                width="24"
+                            >
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link">
+                            About
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <button href="resume.html" class="navbar-link active">
+                            Resume
+                        </button>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="project.html" class="navbar-link">
+                            Projects
+                        </a>
+                    </li>
+                </ul>
+            </nav>            
+            
+            <!-- Resume --> 
+            <article class="resume active">
+
+                <header>
+                    <h2 class="h2 article-title">Resume</h2>
+
+                    <a href="../Assets/efeng_Resume.pdf"
+                    class="resume-download"
+                    target="_blank"
+                    download>
+                        Download PDF ↗
+                    </a>
+                </header>
+
+                <!-- EXPERIENCE -->
+                 
+                <section class="resume-section">
+
+                    <div class="resume-section-heading">
+                        <span class="section-number">01</span>
+                        <h3>Experience</h3>
+                    </div>
+
+                    <!-- BAE Systems Experience -->
+                    <div class="resume-timeline">
+
+                        <div class="resume-item">
+
+                            <div class="resume-date">
+                                <span>Present</span>
+                                <span>Aug 2022</span>
+                            </div>
+
+                            <div class="resume-marker"></div>
+
+                            <div class="resume-content">
+
+                                <span class="resume-label">
+                                    BAE Systems
+                                </span>
+
+                                <h4>
+                                    Senior Systems Engineer /
+                                    Software Engineer
+                                </h4>
+
+                                <ul class="resume-description">
+                                    <li>Designed and deployed agentic AI workflows using LLMs (Meta LLaMA, Mistral) within low-code orchestration platforms (StackAI), enabling intelligent chatbot systems for onboarding and knowledge retrieval<li>
+                                    <li>Developed LLM-driven summarization and anomaly detection workflows, improving KPI monitoring response time by 33%<li>
+                                    <li>Supplemented low-code systems with Python scripts and SQL queries for data extraction, transformation, and integration into AI pipelines<li>
+                                    <li>Built a full-stack application (React + Node.js) to support structured data input, reducing manual errors by 90%</li>
+                                    <li>Re-architected an internal report-generation tool from a monolithic JS implementation into a FastAPI backend with Jinja templating, improving security posture and maintainability for a concurrent internal user base of 5-10.</li>
+                                    <li>Containerized applications using Docker and implemented GitLab CI/CD pipelines to automate build, test, and deployment processes, ensuring scalable and reliable distribution to end users</li>
+                                    <li>Collaborated with stakeholders to deliver production-ready solutions, improving accessibility and usability of data analytics tools across teams</li>
+                                    <li>Integrated Power BI analytics dashboards into operational workflows for major defense programs, enabling real-time decision support</li>
+                                </ul>
+
+                                <div class="resume-tags">
+                                    <span>Python</span>
+                                    <span>SQL</span>
+                                    <span>JavaScript</span>
+                                    <span>FastAPI</span>
+                                    <span>Jinja</span>
+                                    <span>LLMs</span>
+                                    <span>Agentic AI</span>
+                                    <span>Docker</span>
+                                    <span>GitLab</span>
+                                    <span>Power BI</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- Electric Boat Experience -->
+                    <div class="resume-timeline">
+
+                        <div class="resume-item">
+
+                            <div class="resume-date">
+                                <span>Aug 2022</span>
+                                <span>Aug 2020</span>
+                            </div>
+
+                            <div class="resume-marker"></div>
+
+                            <div class="resume-content">
+
+                                <span class="resume-label">
+                                    General Dynamics Electric Boat
+                                </span>
+
+                                <h4>
+                                    Senior Communication Systems Engineer
+                                </h4>
+
+                                <ul class="resume-description">
+                                    <li>Supported development of mission-critical control systems for VIRGINIA-class submarines</li>
+                                    <li>Performed system validation, testing, and risk analysis across hardware/software integrations</li>
+                                    <li>Managed hardware lifecycle and obsolescence planning</li>
+                                    <li>Conducted environmental and system-level testing to ensure operational reliability</li>
+                                </ul>
+
+                                <div class="resume-tags">
+                                    <span>Lifecycle Management</span>
+                                    <span>Reliability Engineering</span>
+                                    <span>Validation & Testing</span>
+                                    <span>Risk Analysis</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Teacher Assistant Experience -->
+                    <div class="resume-timeline">
+
+                        <div class="resume-item">
+
+                            <div class="resume-date">
+                                <span>Dec 2019</span>
+                                <span>Aug 2019</span>
+                            </div>
+
+                            <div class="resume-marker"></div>
+
+                            <div class="resume-content">
+
+                                <span class="resume-label">
+                                    University at Buffalo · Department of Electrical Engineering
+                                </span>
+
+                                <h4>
+                                    Teaching Assistant
+                                </h4>
+
+                                <ul class="resume-description">
+                                    <li>Assisted the professor in evaluating the proficiency of 80+ students through weekly benchmarks and individual projects</li>
+                                    <li>Hosted office hours to discuss technical concepts and enhance understanding of embedded systems</li>
+                                    <li>Provided guidance on student projects involving ARM C and C++</li>
+                                </ul>
+
+                                <div class="resume-tags">
+                                    <span>Embedded Systems</span>
+                                    <span>ARM C</span>
+                                    <span>C++</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Equinix Experience -->
+                    <div class="resume-timeline">
+
+                        <div class="resume-item">
+
+                            <div class="resume-date">
+                                <span>Aug 2019</span>
+                                <span>May 2019</span>
+                            </div>
+
+                            <div class="resume-marker"></div>
+
+                            <div class="resume-content">
+
+                                <span class="resume-label">
+                                    Equinix
+                                </span>
+
+                                <h4>
+                                    Sales Engineer Intern
+                                </h4>
+
+                                <ul class="resume-description">
+                                    <li>Managed and organized data using Salesforce, ensuring accuracy and accessibility for streamlined operations</li>
+                                        <li>Automated data entry tasks using Java-based web scraping tools to extract, process, and input information from online sources</li>
+                                        <li>Utilized Microsoft Visio to design customizable cabinet templates tailored to customer requirements</li>
+                                </ul>
+
+                                <div class="resume-tags">
+                                    <span>Salesforce</span>
+                                    <span>Java</span>
+                                    <span>Web Scraping</span>
+                                    <span>Data Automation</span>
+                                    <span>Microsoft Visio</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EDUCATION -->
+
+                <section class="resume-section">
+
+                    <div class="resume-section-heading">
+                        <span class="section-number">02</span>
+                        <h3>Education</h3>
+                    </div>
+
+                    <div class="resume-timeline">
+
+                        <!-- NORTHEASTERN UNIVERSITY -->
+                        <div class="resume-item">
+
+                            <div class="resume-date">
+                                <span>Dec 2023</span>
+                                <span>July 2021</span>
+                            </div>
+
+                            <div class="resume-marker"></div>
+
+                            <div class="resume-content">
+
+                                <span class="resume-label">
+                                    Northeastern University
+                                </span>
+
+                                <h4>
+                                    M.S. in Electrical &amp; Computer Engineering
+                                </h4>
+
+                                <p class="resume-description">
+                                     Magna Cum Laude · Hardware and Software for Machine Intelligence
+                                </p>
+
+                                <div class="resume-tags">
+                                    <span>Python</span>
+                                    <span>Machine Learning</span>
+                                    <span>Computer Vision</span>
+                                    <span>ROS</span>
+                                    <span>Cryptography</span>
+                                    <span>OpenCV</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    <!-- UNIVERSITY AT BUFFALO -->
+                    <div class="resume-item">
+
+                        <div class="resume-date">
+                            <span>May 2020</span>
+                            <span>June 2016</span>
+                        </div>
+
+                        <div class="resume-marker"></div>
+
+                        <div class="resume-content">
+
+                            <span class="resume-label">
+                                University at Buffalo
+                            </span>
+
+                            <h4>
+                                B.S. in Electrical Engineering
+                            </h4>
+
+                            <p class="resume-description">
+                                Cum Laude · Minor in Mathematics
+                            </p>
+
+                            <div class="resume-tags">
+                                <span>Embedded Systems</span>
+                                <span>C</span>
+                                <span>C++</span>
+                                <span>ARM</span>
+                                <span>Python</span>
+                                <span>Matlab</span>
+                                <span>Swift Programming</span>
+                                <span>Image Processing</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                </section>
+            
+                <!-- SKILLS -->
+
+                <section class="resume-section">
+
+                    <div class="resume-section-heading">
+                        <span class="section-number">03</span>
+                        <h3>Technical Skills</h3>
+                    </div>
+
+                    <div class="skills-grid">
+
+                        <div class="skill-group">
+                            <span class="skill-category">Languages</span>
+                            <p>Python · SQL · JavaScript · C · C++ · ARM C · Swift</p>
+                        </div>
+
+                        <div class="skill-group">
+                            <span class="skill-category">Frameworks &amp; Libraries</span>
+                            <p>React · FastAPI · Node.js · Jinja · Pandas · OpenCV · scikit-learn · Statsmodels</p>
+                        </div>
+
+                        <div class="skill-group">
+                            <span class="skill-category">AI / Machine Learning</span>
+                            <p>Computer Vision · Image Processing · Agentic AI · LLMs · RAG · FAISS</p>
+                        </div>
+
+                        <div class="skill-group">
+                            <span class="skill-category">Robotics &amp; Systems</span>
+                            <p>Robot OS · Embedded Systems · Systems Integration · Hardware/Software Integration · System Validation &amp; Testing · VHDL</p>
+                        </div>
+
+                        <div class="skill-group">
+                            <span class="skill-category">DevOps &amp; Tools</span>
+                            <p>Git · Docker · GitLab · Bitbucket</p>
+                        </div>
+
+                        <div class="skill-group">
+                            <span class="skill-category">Data &amp; Analytics</span>
+                            <p>SQL Server · Power BI · Data Analysis · Data Visualization · Forecasting</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- CERTIFICATIONS -->
+
+                <section class="resume-section">
+
+                    <div class="resume-section-heading">
+                        <span class="section-number">04</span>
+                        <h3>Certifications</h3>
+                    </div>
+
+                    <div class="certifications">
+
+                        <div class="certification">
+                            <span>DoD</span>
+                            <p>SECRET Clearance</p>
+                            <small>Active · Valid through 2030</small>
+                        </div>
+                        
+                        <div class="certification">
+                            <span>Machine Learning Specialization</span>
+                            <p>Stanford Online · DeepLearning.AI</p>
+                        </div>                        
+                        
+                        <div class="certification">
+                            <span>EIT</span>
+                            <p>Engineer-in-Training</p>
+                        </div>
+
+                        <div class="certification">
+                            <span>FAA - Airframe</span>
+                            <p>Aircraft Maintenance Technician</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </article>
+
+            </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/helper.js"></script>
+
+</body>
+
+</html>
+
